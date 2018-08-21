@@ -1,8 +1,9 @@
 import React, { Component } from "react";
-import { Container, Divider } from "semantic-ui-react";
+import { Container } from "semantic-ui-react";
 import { Route, Switch } from "react-router-dom";
 import NavBar from "../../features/nav/NavBar/NavBar";
 import HomePage from '../../features/home/HomePage';
+import CommunityPage from '../../features/community/CommunityPage';
 
 export default class App extends Component {
   render() {
@@ -18,6 +19,7 @@ export default class App extends Component {
             <NavBar />
             <Container className="main">
               <Switch>
+                <Route path="/community" component={CommunityPage}/>    
               </Switch>
             </Container>
           </div>  

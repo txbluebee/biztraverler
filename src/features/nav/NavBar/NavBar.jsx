@@ -1,19 +1,59 @@
-import React, { Component } from 'react';
-import { Menu, Container } from "semantic-ui-react";
+import React, { Component } from "react";
+import { Menu, Container, Icon } from "semantic-ui-react";
+import { NavLink, Link} from "react-router-dom";
+import styled from "styled-components";
+import SignedInMenu from "../Menus/SignedInMenu";
+import SignedOutMenu from "../Menus/SignedOutMenu";
 
 class NavBar extends Component {
+  state = {
+    authenticate: false
+  };
+
+  handleSignIn = () => {
+    this.setState({
+      authenticate: true
+    });
+  };
+
+  handleSignOut = () => {
+    this.setState({
+      authenticate: false
+    });
+  };
+
   render() {
+    const { authenticate } = this.state;
     return (
-      <Menu>
+      <MenuWrapper size="big" inverted fixed="top">
         <Container>
-          <Menu.Item>
-            <h1>Narbar</h1>
+          <Menu.Item as={Link} to="/" header>
+            <Icon name="plane" />
+            BizTravler
           </Menu.Item>
+
+          {authenticate && (
+            <Menu.Item as={NavLink} to="/community" name="Community" />
+          )}
+          {authenticate && (
+            <Menu.Item as={NavLink} to="/profile" name="Profile" />
+          )}
+          <Menu.Item as={NavLink} to="/forum" name="Forum" />
+          {/* SignIn & SignOut Menu */}
+          {authenticate ? (
+            <SignedInMenu signOut={this.handleSignOut} />
+          ) : (
+            <SignedOutMenu signIn={this.handleSignIn} />
+          )}
         </Container>
-      </Menu>
-    )
+      </MenuWrapper>
+    );
   }
 }
 
-
 export default NavBar;
+
+const MenuWrapper = styled(Menu)`
+  background-color: #17c671 !important;
+  height: 60px;
+`;
