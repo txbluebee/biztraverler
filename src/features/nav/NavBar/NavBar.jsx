@@ -25,7 +25,7 @@ class NavBar extends Component {
   render() {
     const { authenticate } = this.state;
     return (
-      <MenuWrapper size="big" inverted fixed="top">
+      <MenuWrapper size="large" inverted fixed="top">
         <Container>
           <Menu.Item as={Link} to="/" header>
             <Icon name="plane" />
