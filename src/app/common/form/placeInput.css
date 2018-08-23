@@ -1,0 +1,23 @@
+.place-wrapper {
+  position: relative;
+}
+
+.location-search-input {
+  width: 400px;
+  font-size: 1.2rem;
+  padding: 10px 0;
+  border-radius: 5px;
+  padding-left: 1rem;
+}
+
+.autocomplete-dropdown-container {
+  width: 100%;
+  font-size: 1.2rem;
+  border: 1px solid #eee;
+  position: absolute;
+}
+
+
+.autocomplete-dropdown-container > *{
+  padding: 0.25rem 0.5rem;
+}
