@@ -33,3 +33,4 @@ export default connect(mapState)(CommunityPage);
 const StyledGrid = styled(Grid)`
   margin-top: 1rem !important;
 `;
+
