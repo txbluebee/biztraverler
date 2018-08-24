@@ -1,17 +1,21 @@
 import React from 'react';
 import GoogleMapReact from 'google-map-react';
-import Marker from './CommunityMapMarker';
+import styled from "styled-components";
+import Marker from './Marker';
+import {  GreenStyle } from './fancyMapStyles';
 
-const CommunityLargeMap = ({mapData}) => {
+const GoogleMap = ({mapData, height}) => {
   const center = [mapData[0].lat, mapData[0].lng];
   const zoom = 8;
-  console.log(<GoogleMapReact/>);
   return (
-    <div style={{ height: '300px', width: '100%' }}>
+    <MapWrapper height={height}>
       <GoogleMapReact
         bootstrapURLKeys={{ key: `${process.env.REACT_APP_GOOGLE_MAP_API_KEY}`}}
         defaultCenter={center}
         defaultZoom={zoom}
+        options={{
+          styles: GreenStyle
+        }}
       >
         {mapData && mapData.map(location => 
           <Marker 
@@ -21,9 +25,13 @@ const CommunityLargeMap = ({mapData}) => {
           />)
         }
       </GoogleMapReact>
-    </div>
+    </MapWrapper>
   );
 };
 
-export default CommunityLargeMap;
+export default GoogleMap;
 
+const MapWrapper = styled.div`
+  height: ${({height}) => height? height : '300px'};
+  width: 100%;
+`

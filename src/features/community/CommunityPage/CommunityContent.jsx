@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import CommunityFeed from './CommunityFeed';
-import CommunityLargeMap from './CommunityLargeMap';
+import GoogleMap from '../../../app/common/map/GoogleMap';
 
 
 const mapData = [
@@ -26,7 +26,7 @@ const CommunityContent = () => {
 
   return (
     <Wrapper>
-      <CommunityLargeMap mapData={mapData}/>
+      <GoogleMap mapData={mapData}/>
       <StyledHeader>
       </StyledHeader>
       <CommunityFeed/>

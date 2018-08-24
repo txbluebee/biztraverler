@@ -10,7 +10,7 @@ const TextInput = ({
 }) => {
   return (
     <Form.Field error={touched && !!error} width={width}>
-      <input {...input} placeholder={placeholder} type={type} />
+      <input {...input} title={placeholder} placeholder={placeholder} type={type} />
       {touched &&
         error && (
           <Label color="red">

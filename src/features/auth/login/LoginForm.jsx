@@ -1,13 +1,19 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import { Field, reduxForm } from 'redux-form';
 import { Form, Segment, Button, Divider } from 'semantic-ui-react';
 import TextInput from '../../../app/common/form/TextInput';
 import SocialLogin from '../socialLogin/SocialLogin';
 import { createValidator ,combineValidators, composeValidators ,isRequired } from "revalidate";
+import { login } from '../authActions';
 
-const LoginForm = ({handleSubmit}) => {
+const actions = {
+  login
+}
+
+const LoginForm = ({handleSubmit, login}) => {
   return (
-    <Form size="large" onSubmit={handleSubmit}>
+    <Form size="large" onSubmit={handleSubmit(login)} >
       <Segment>
         <Field
           name="email"
@@ -49,4 +55,4 @@ const validate = combineValidators({
 })
 
 
-export default reduxForm({form: 'loginForm', validate})(LoginForm);
+export default connect(null, actions)(reduxForm({form: 'loginForm', validate})(LoginForm));

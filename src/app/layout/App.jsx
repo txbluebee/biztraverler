@@ -7,6 +7,7 @@ import LandingPage from '../../features/landing/LandingPage';
 import HomePage from '../../features/home/HomePage';
 import CommunityPage from '../../features/community/CommunityPage/CommunityPage';
 import TestComponent from '../../features/test/TestComponent';
+import UserProfilePage from '../../features/user/UserProfile/UserProfilePage';
 // import SearchComponent from '../../features/test/SearchComponent';
 
 export default class App extends Component {
@@ -27,6 +28,7 @@ export default class App extends Component {
                 <Route path="/home" component={HomePage}/>    
                 <Route path="/community" component={CommunityPage}/>    
                 <Route path="/test" component={TestComponent}/> 
+                <Route path="/profile" component={UserProfilePage}/>  
               </Switch>
             </Container>
           </div>  
