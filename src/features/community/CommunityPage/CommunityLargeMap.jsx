@@ -1,10 +1,11 @@
 import React from 'react';
 import GoogleMapReact from 'google-map-react';
-import { Icon } from 'semantic-ui-react';
+import Marker from './CommunityMapMarker';
 
 const CommunityLargeMap = ({mapData}) => {
   const center = [mapData[0].lat, mapData[0].lng];
   const zoom = 8;
+  console.log(<GoogleMapReact/>);
   return (
     <div style={{ height: '300px', width: '100%' }}>
       <GoogleMapReact
@@ -26,5 +27,3 @@ const CommunityLargeMap = ({mapData}) => {
 
 export default CommunityLargeMap;
 
-
-const Marker = () => <Icon name="map marker" size="big" color="red"/>;

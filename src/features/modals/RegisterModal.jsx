@@ -11,7 +11,7 @@ const actions = {
 
 const RegisterModal = ({closeModal}) => {
   return (
-    <Modal size="mini" open={true} onClose={closeModal}>
+    <Modal dimmer="blurring" size="mini" open={true} onClose={closeModal}>
       <Modal.Header>Sign Up</Modal.Header>
       <Modal.Content>
         <Modal.Description>

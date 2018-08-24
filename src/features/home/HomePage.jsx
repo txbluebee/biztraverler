@@ -1,23 +1,30 @@
 import React from 'react'
+import { connect } from 'react-redux';
 import styled from "styled-components";
 import SearchBar from './SearchBar';
+import { openModal } from '../modals/modalActions';
 
-const HomePage = () => {
+
+const actions = {
+  openModal
+}
+
+const HomePage = ({openModal}) => {
   return (
     <Wrapper>
       <MainContent>
         <Image src='/assets/homepage_logo.png'/>
         <SearchBar/>
         <Text>
-          <p>Please <span>Login to your TripIt Account</span></p>
-          <p>to get better search result!</p>
+          <p>Please <span onClick={() => openModal('TripItLoginModal')}>Login to your TripIt Account</span></p>
+          <p>to get better search result</p>
         </Text>
       </MainContent> 
     </Wrapper>
   )
 }
 
-export default HomePage
+export default connect(null, actions)(HomePage);
 
 const Wrapper = styled.div`
   position: relative;

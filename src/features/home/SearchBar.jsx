@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import PlaceInput from "../../app/common/form/PlaceInput";
+import { withRouter } from "react-router-dom";
 import { geocodeByAddress, getLatLng } from "react-places-autocomplete";
 import styled from "styled-components";
 
@@ -34,14 +35,14 @@ class SearchBar extends Component {
           onSelect={this.handleCitySelect}
         />
         <StyledButtonWrapper>
-          <button className="btn">Search</button>
+          <button className="btn" onClick={() => this.props.history.push('/community')}>Search</button>
         </StyledButtonWrapper>
       </SearchBarWrapper>
     );
   }
 }
 
-export default SearchBar;
+export default withRouter(SearchBar);
 
 const SearchBarWrapper = styled.div`
   position: relative;

@@ -39,9 +39,9 @@ class NavBar extends Component {
             BizTravler
           </Menu.Item>
           <Menu.Item as={NavLink} to="/home" name="Home" />
-          {authenticate && (
+          {/* {authenticate && (
             <Menu.Item as={NavLink} to="/community" name="Community" />
-          )}
+          )} */}
           {authenticate && (
             <Menu.Item as={NavLink} to="/profile" name="Profile" />
           )}

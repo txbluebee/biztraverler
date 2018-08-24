@@ -1,24 +1,25 @@
 import React from 'react';
-import { connect } from "react-redux";
+import { connect } from 'react-redux';
 import { Modal } from "semantic-ui-react";
-import LoginForm from '../auth/login/LoginForm';
 import { closeModal } from './modalActions';
+import TripItLoginForm from '../auth/socialLogin/TripItLoginForm';
+
 
 const actions = {
   closeModal
 }
 
-const LoginModal = ({closeModal}) => {
+const TripItLoginModal = ({closeModal}) => {
   return (
     <Modal dimmer="blurring" size="mini" open={true} onClose={closeModal}>
-      <Modal.Header>Sign In</Modal.Header>
+      <Modal.Header>Login to TripIt</Modal.Header>
       <Modal.Content>
         <Modal.Description>
-          <LoginForm/>
+          <TripItLoginForm/>
         </Modal.Description>
       </Modal.Content>
     </Modal>
   )
 }
 
-export default connect(null, actions)(LoginModal)
+export default connect(null, actions)(TripItLoginModal);
