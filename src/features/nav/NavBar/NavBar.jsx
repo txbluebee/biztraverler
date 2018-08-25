@@ -29,7 +29,6 @@ class NavBar extends Component {
     const {authenticated, currentUser} = this.props.auth;
     const { openModal } = this.props;
 
-    console.log(currentUser);
     return (
       <MenuWrapper size="large" inverted fixed="top">
         <Container>
