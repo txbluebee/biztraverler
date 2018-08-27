@@ -4,17 +4,17 @@ import styled from "styled-components";
 import Marker from './Marker';
 import {  GreenStyle } from './fancyMapStyles';
 
-const GoogleMap = ({mapData, height}) => {
-  const center = [mapData[0].lat, mapData[0].lng];
-  const zoom = 8;
+const GoogleMap = ({mapData, height, zoom, defaultCenter = {lat: 35.640696, lng: -42.845525 }}) => {
+  const center = [defaultCenter.lat, defaultCenter.lng];
   return (
     <MapWrapper height={height}>
       <GoogleMapReact
         bootstrapURLKeys={{ key: `${process.env.REACT_APP_GOOGLE_MAP_API_KEY}`}}
         defaultCenter={center}
-        defaultZoom={zoom}
+        defaultZoom={zoom || 10}
         options={{
-          styles: GreenStyle
+          styles: GreenStyle,
+          minZoom: 1.5
         }}
       >
         {mapData && mapData.map(location => 
@@ -22,6 +22,7 @@ const GoogleMap = ({mapData, height}) => {
             key={location.id} 
             lat={location.lat} 
             lng={location.lng}
+            primaryLocation={location.primary_location}
           />)
         }
       </GoogleMapReact>

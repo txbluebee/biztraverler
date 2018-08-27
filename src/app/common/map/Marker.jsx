@@ -2,15 +2,16 @@ import React from "react";
 import { Icon, Popup } from "semantic-ui-react";
 import styled from "styled-components";
 
-const Marker = ({ $hover }) => {
+const Marker = ({ $hover, primaryLocation, locationDetail }) => {
+
   return (
     <MarkerWrapper hover={$hover}>
       <Popup
-        trigger={<Icon name="map marker alternate" size="big" color="teal" />}
+        trigger={<Icon name="map marker alternate" size="big" color="red" />}
         position="top center"
       >
-        <Popup.Header>Jeff Brown</Popup.Header>
-        <Popup.Content>Hello Mexico</Popup.Content>
+        <Popup.Header>{primaryLocation}</Popup.Header>
+        <Popup.Content>{locationDetail}</Popup.Content>
       </Popup>
     </MarkerWrapper>
   );

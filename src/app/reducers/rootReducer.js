@@ -4,6 +4,7 @@ import communityReducer from '../../features/community/communityReducer.jsx';
 import modalReducer from '../../features/modals/modalReducer';
 import authReducer from '../../features/auth/authReducer';
 import asyncReducer from '../../features/async/asyncReducer';
+import userReducer from '../../features/user/userReducer';
 
 
 const rootReducer = combineReducers({
@@ -11,7 +12,8 @@ const rootReducer = combineReducers({
   modals: modalReducer,
   form: FormReducdr,
   auth: authReducer,
-  async: asyncReducer
+  async: asyncReducer,
+  user: userReducer
 })
 
 export default rootReducer;

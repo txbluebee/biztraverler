@@ -24,7 +24,7 @@ class CommunityPage extends Component {
   render() {
     const { peopleData } = this.props.community;
     const { loading } = this.props;
-    if (loading) return <LoadingComponent invert={true}/>
+    if (loading) return <LoadingComponent inverted={true}/>
     return (
       <Grid>
         <Grid.Column width="5">

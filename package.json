@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "ajv": "^6.0.0",
+    "axios": "^0.18.0",
     "faker": "^4.1.0",
     "google-map-react": "^1.0.6",
     "lodash": "^4.17.10",
