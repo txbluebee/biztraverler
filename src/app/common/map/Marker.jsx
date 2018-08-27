@@ -1,9 +1,10 @@
 import React from "react";
 import { Icon, Popup } from "semantic-ui-react";
 import styled from "styled-components";
+import moment from 'moment';
 
-const Marker = ({ $hover, primaryLocation, locationDetail }) => {
-
+const Marker = ({ $hover, primaryLocation, locationDetail, travelDate }) => {
+  const travelMonth = moment(travelDate).format('MMMM, YYYY') || 'Unknown'
   return (
     <MarkerWrapper hover={$hover}>
       <Popup
@@ -11,7 +12,7 @@ const Marker = ({ $hover, primaryLocation, locationDetail }) => {
         position="top center"
       >
         <Popup.Header>{primaryLocation}</Popup.Header>
-        <Popup.Content>{locationDetail}</Popup.Content>
+        <Popup.Content>{travelMonth}</Popup.Content>
       </Popup>
     </MarkerWrapper>
   );

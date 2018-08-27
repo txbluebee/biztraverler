@@ -1,5 +1,7 @@
 import React from "react";
 import GoogleMap from '../../../app/common/map/GoogleMap';
+import UserProfileTripList from './UserProfileTripList';
+
 
 const UserProfileTrips = ({ trips }) => {
   console.log(trips);
@@ -14,10 +16,10 @@ const UserProfileTrips = ({ trips }) => {
       lng: PrimaryLocationAddress.longitude
     })
   );
-  console.log(filterData);
   return (
     <React.Fragment>
       <GoogleMap mapData={filterData} height="300px" zoom={1}/>
+      <UserProfileTripList tripData={filterData}/>
     </React.Fragment>
   );
 };

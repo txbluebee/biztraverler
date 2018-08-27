@@ -23,6 +23,7 @@ const GoogleMap = ({mapData, height, zoom, defaultCenter = {lat: 35.640696, lng:
             lat={location.lat} 
             lng={location.lng}
             primaryLocation={location.primary_location}
+            travelDate={location.start_date}
           />)
         }
       </GoogleMapReact>
