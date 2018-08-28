@@ -53,6 +53,7 @@ const SideBar = styled.div`
 
 const MainContent = styled.div`
   flex: 0 0 65%;
+  margin-bottom: 1rem;
 `;
 
 const GreyWrapper = styled.div`

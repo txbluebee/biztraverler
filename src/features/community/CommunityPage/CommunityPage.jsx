@@ -5,6 +5,7 @@ import CommunityContent from "./CommunityContent";
 import LoadingComponent from '../../../app/layout/LoadingComponent';
 import { Grid } from "semantic-ui-react";
 import { fetchUserContacts } from '../communityActions';
+import requireAuth from '../../../app/common/hoc/requireAuth';
 
 const mapState = state => ({
   community: state.community,
@@ -38,4 +39,4 @@ class CommunityPage extends Component {
   }
 }
 
-export default connect(mapState, actions)(CommunityPage);
+export default connect(mapState, actions)(requireAuth(CommunityPage));

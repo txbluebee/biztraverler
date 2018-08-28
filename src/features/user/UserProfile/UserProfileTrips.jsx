@@ -4,7 +4,6 @@ import UserProfileTripList from './UserProfileTripList';
 
 
 const UserProfileTrips = ({ trips }) => {
-  console.log(trips);
   const filterData = trips.map(
     ({ id, image_url, start_date, end_date, primary_location, PrimaryLocationAddress }) => ({
       id,
