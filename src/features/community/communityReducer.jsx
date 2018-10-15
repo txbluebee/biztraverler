@@ -1,5 +1,5 @@
 import { createReducer } from '../../app/common/util/reducerUtil';
-import { FETCH_USER_CONTACTS } from './communityConstant';
+import { FETCH_USER_CONTACTS, FETCH_NEARBY } from './communityConstant';
 
 const initialState = {}
 

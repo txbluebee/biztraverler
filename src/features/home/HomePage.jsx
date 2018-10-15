@@ -3,18 +3,20 @@ import { connect } from 'react-redux';
 import styled from "styled-components";
 import SearchBar from './SearchBar';
 import { openModal } from '../modals/modalActions';
+import { fetchNearbyLocation } from '../community/communityActions';
 
 
 const actions = {
-  openModal
+  openModal,
+  fetchNearbyLocation
 }
 
-const HomePage = ({openModal}) => {
+const HomePage = ({openModal, fetchNearbyLocation}) => {
   return (
     <Wrapper>
       <MainContent>
         <Image src='/assets/homepage_logo.png'/>
-        <SearchBar/>
+        <SearchBar fetchNearbyLocation={fetchNearbyLocation} />
         <Text>
           <p>Please <span onClick={() => openModal('TripItLoginModal')}>Login to your TripIt Account</span></p>
           <p>to get better search result</p>

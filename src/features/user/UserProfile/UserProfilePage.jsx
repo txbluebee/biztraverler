@@ -16,6 +16,18 @@ const actions = {
   fetchTripIt
 }
 
+const LinkedinData = {
+  status: "success",
+  givenName: "Brian",
+  familyName: "Fan",
+  email: "kuomu.fan@gmail.com",
+  image: "https://media.licdn.com/dms/image/C4E03AQEn1TAFoNSENA/profile-displayphoto-shrink_100_100/0?e=1541030400&v=beta&t=Lm6L6deyq3FiWHbHjVJFrvJG_c2FD4GncQfIzFOKuoA",
+  headline: "Web Developer ",
+  position: "Web Developer at Freelance",
+  humanLocation: "Greater Seattle Area",
+  createdAt: "2018-08-29T03:18:19.554Z"
+}
+
 class UserProfilePage extends Component {
 
   componentDidMount(){
@@ -29,7 +41,7 @@ class UserProfilePage extends Component {
       <Wrapper>
         <SideBar>
           <GreyWrapper>
-            { profile  && <UserProfileBasicInfo profile={profile}/>}
+            { profile  && <UserProfileBasicInfo LinkedinData={LinkedinData} profile={profile}/>}
           </GreyWrapper>
         </SideBar>
         <MainContent>

@@ -10,7 +10,7 @@ const TextInput = ({
 }) => {
   return (
     <Form.Field error={touched && !!error} width={width}>
-      <input {...input} title={placeholder} placeholder={placeholder} type={type} />
+      <input {...input} title={placeholder} placeholder={placeholder} type={type} autoComplete="new-password"/>
       {touched &&
         error && (
           <Label color="red">

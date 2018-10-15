@@ -2,17 +2,17 @@ import React from 'react'
 import styled from 'styled-components';
 import { Icon } from 'semantic-ui-react';
 
-const UserProfileBasicInfo = ({profile}) => {
+const UserProfileBasicInfo = ({profile, LinkedinData}) => {
   return (
     <Wrapper>
-      <img src="/assets/user.png" alt=""/>
-      <div className="profile-header">Lily Howard</div>
+      <img src={LinkedinData.image} alt=""/>
+      <div className="profile-header">{`${LinkedinData.givenName} ${LinkedinData.familyName}`}</div>
       <div className="profile-hometown">
         <Icon name="map marker alternate" color="blue" size="large"/>
-        <span>Seattle, WA</span>
+        <span>{LinkedinData.humanLocation}</span>
       </div>
       <div className="profile-center">
-        <p>CEO at Megacorp</p>
+        <p>{LinkedinData.headline}</p>
         <div className="socail-icons">
           <Icon name="linkedin"/>
           <Icon name="facebook square"/>

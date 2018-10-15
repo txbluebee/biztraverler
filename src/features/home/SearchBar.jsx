@@ -24,9 +24,13 @@ class SearchBar extends Component {
     this.setState({ city: selectedCity });
   };
 
+  onCitySearch = () => {
+    const [ cityName, state, country] = this.state.city.split(',');
+    this.props.fetchNearbyLocation(cityName);
+  }
+
   render() {
     const { city, cityLatLng } = this.state;
-    console.log("Success", cityLatLng);
     return (
       <SearchBarWrapper>
         <PlaceInput
@@ -35,7 +39,7 @@ class SearchBar extends Component {
           onSelect={this.handleCitySelect}
         />
         <StyledButtonWrapper>
-          <button className="btn" onClick={() => this.props.history.push('/community')}>Search</button>
+          <button className="btn" onClick={this.onCitySearch}>Search</button>
         </StyledButtonWrapper>
       </SearchBarWrapper>
     );

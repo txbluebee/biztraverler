@@ -2,6 +2,18 @@ import { FETCH_TRIPIT } from './userConstants';
 import { asyncActionStart, asyncActionFinish, asyncActionError } from '../async/asyncActions'
 import axios from 'axios';
 
+
+export const loginLinkedin = () => 
+  async dispatch => {
+    try {
+        
+    } catch (error) {
+      
+    }
+}
+
+
+
 const ROOT_URL = "https://json-server-heroku-psqlxoinfr.now.sh/db"
 
 export const fetchTripIt = () => 
